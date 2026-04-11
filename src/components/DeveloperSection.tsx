@@ -1,22 +1,24 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-const codeSnippet = `import Pulso from '@pulso/sdk';
-
-const pulso = new Pulso({
-  apiKey: process.env.PULSO_API_KEY,
-  region: 'mx'
-});
-
-// Start a KYC verification via WhatsApp
-const verification = await pulso.verify.create({
-  phone: '+5215512345678',
-  type: 'ine',
-  webhook: 'https://your-app.com/webhooks/kyc'
-});
-
-console.log(verification.status); // 'pending'
-// User completes the flow in WhatsApp ✓`;
+const codeLines = [
+  { text: "import Pulso from '@pulso/sdk';", type: "code" },
+  { text: "", type: "blank" },
+  { text: "const pulso = new Pulso({", type: "code" },
+  { text: "  apiKey: process.env.PULSO_API_KEY,", type: "code" },
+  { text: "  region: 'mx'", type: "code" },
+  { text: "});", type: "code" },
+  { text: "", type: "blank" },
+  { text: "// Start a KYC verification via WhatsApp", type: "comment" },
+  { text: "const verification = await pulso.verify.create({", type: "code" },
+  { text: "  phone: '+5215512345678',", type: "string" },
+  { text: "  type: 'ine',", type: "string" },
+  { text: "  webhook: 'https://your-app.com/webhooks/kyc'", type: "string" },
+  { text: "});", type: "code" },
+  { text: "", type: "blank" },
+  { text: "console.log(verification.status); // 'pending'", type: "code" },
+  { text: "// User completes the flow in WhatsApp ✓", type: "comment" },
+];
 
 const features = [
   "RESTful APIs with full OpenAPI spec",
@@ -68,12 +70,40 @@ const DeveloperSection = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
               <span className="text-xs text-muted-foreground ml-2">quickstart.js</span>
             </div>
-            <pre className="p-5 text-sm leading-relaxed overflow-x-auto">
-              <code>{codeSnippet.split('\n').map((line, i) => (
-                <span key={i} className="block">
-                  {colorize(line)}
-                </span>
-              ))}</code>
+            <pre className="p-5 text-[13px] leading-relaxed overflow-x-auto font-mono">
+              <code>
+                {codeLines.map((line, i) => {
+                  if (line.type === "blank") return <span key={i} className="block h-5" />;
+                  if (line.type === "comment") return <span key={i} className="block text-muted-foreground">{line.text}</span>;
+                  if (line.type === "string") {
+                    const parts = line.text.split(/('.*?')/g);
+                    return (
+                      <span key={i} className="block text-foreground">
+                        {parts.map((p, j) =>
+                          p.startsWith("'") ? <span key={j} className="text-accent">{p}</span> : p
+                        )}
+                      </span>
+                    );
+                  }
+                  const highlighted = line.text
+                    .replace(/(import|from|const|await|new)/g, '___KW___$1___/KW___');
+                  const parts = highlighted.split(/(___KW___|___\/KW___)/g);
+                  let inKeyword = false;
+                  return (
+                    <span key={i} className="block text-foreground">
+                      {parts.map((p, j) => {
+                        if (p === '___KW___') { inKeyword = true; return null; }
+                        if (p === '___/KW___') { inKeyword = false; return null; }
+                        if (inKeyword) return <span key={j} className="text-primary">{p}</span>;
+                        const strParts = p.split(/('.*?')/g);
+                        return strParts.map((s, k) =>
+                          s.startsWith("'") ? <span key={`${j}-${k}`} className="text-accent">{s}</span> : s
+                        );
+                      })}
+                    </span>
+                  );
+                })}
+              </code>
             </pre>
           </motion.div>
         </div>
@@ -81,24 +111,5 @@ const DeveloperSection = () => {
     </section>
   );
 };
-
-function colorize(line: string) {
-  if (line.startsWith('//') || line.includes('// ')) {
-    const commentIndex = line.indexOf('//');
-    return (
-      <>
-        {commentIndex > 0 && <span>{line.slice(0, commentIndex)}</span>}
-        <span className="text-muted-foreground">{line.slice(commentIndex)}</span>
-      </>
-    );
-  }
-  if (line.startsWith('import ') || line.startsWith('const ') || line.startsWith('await ')) {
-    return <span>{line.replace(/(import|from|const|await|new)/g, (m) => `\u200B`).split('\u200B').reduce((acc: any[], part, i, arr) => {
-      if (i === 0) return [<span key={i} className="text-primary">{line.match(/(import|from|const|await|new)/)?.[0]}</span>, part];
-      return acc;
-    }, [])}{line}</span>;
-  }
-  return <span className="text-foreground">{line}</span>;
-}
 
 export default DeveloperSection;
