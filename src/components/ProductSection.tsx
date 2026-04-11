@@ -19,7 +19,7 @@ const products = [
   {
     icon: Fingerprint,
     name: "Pulso ID",
-    tag: "coming soon",
+    tag: "Coming soon",
     tagColor: "text-muted-foreground",
     description: "Portable identity primitive. Once verified, users carry their Pulso ID across merchants. Reduce onboarding friction from days to seconds.",
   },
