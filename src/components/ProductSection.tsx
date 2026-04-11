@@ -12,7 +12,7 @@ const products = [
   {
     icon: CreditCard,
     name: "Pulso Pay",
-    tag: "coming soon",
+    tag: "Coming soon",
     tagColor: "text-muted-foreground",
     description: "Programmable payments inside WhatsApp threads. SPEI, PIX, and card-on-file — triggered by a single API call. Real-time settlement webhooks.",
   },
