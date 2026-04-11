@@ -12,15 +12,15 @@ const products = [
   {
     icon: CreditCard,
     name: "Pulso Pay",
-    tag: "Coming Q3",
-    tagColor: "text-primary",
+    tag: "coming soon",
+    tagColor: "text-muted-foreground",
     description: "Programmable payments inside WhatsApp threads. SPEI, PIX, and card-on-file — triggered by a single API call. Real-time settlement webhooks.",
   },
   {
     icon: Fingerprint,
     name: "Pulso ID",
-    tag: "Coming Q4",
-    tagColor: "text-primary",
+    tag: "coming soon",
+    tagColor: "text-muted-foreground",
     description: "Portable identity primitive. Once verified, users carry their Pulso ID across merchants. Reduce onboarding friction from days to seconds.",
   },
   {
