@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const BeforePhone = () => (
-  <div className="w-[280px] md:w-[300px] rounded-[2rem] border-[3px] border-[hsl(216,30%,20%)] bg-[#111b21] shadow-2xl overflow-hidden">
+  <div className="w-[280px] md:w-[300px] rounded-[2rem] border-[3px] border-[hsl(216,30%,20%)] bg-[#111b21] shadow-2xl overflow-hidden flex-1 flex flex-col">
     {/* Status bar */}
     <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[10px] text-[#8696a0]">
       <span>10:28</span>
@@ -19,7 +19,7 @@ const BeforePhone = () => (
       <span className="text-sm font-semibold text-[#e9edef]">Merchant</span>
     </div>
     {/* Chat */}
-      <div className="px-3 py-3 space-y-2 h-[320px] overflow-y-auto" style={{ background: '#0b141a' }}>
+      <div className="px-3 py-3 space-y-2 flex-1" style={{ background: '#0b141a' }}>
       <div className="flex justify-center mb-1">
         <span className="text-[10px] bg-[#182229] text-[#8696a0] px-3 py-0.5 rounded-md">TODAY</span>
       </div>
@@ -75,7 +75,7 @@ const BeforePhone = () => (
 );
 
 const AfterPhone = () => (
-  <div className="w-[280px] md:w-[300px] rounded-[2rem] border-[3px] border-[hsl(216,30%,20%)] bg-[#111b21] shadow-2xl overflow-hidden">
+  <div className="w-[280px] md:w-[300px] rounded-[2rem] border-[3px] border-[hsl(216,30%,20%)] bg-[#111b21] shadow-2xl overflow-hidden flex-1 flex flex-col">
     {/* Status bar */}
     <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[10px] text-[#8696a0]">
       <span>10:31</span>
@@ -96,7 +96,7 @@ const AfterPhone = () => (
       </div>
     </div>
     {/* Chat */}
-    <div className="px-3 py-3 space-y-2 h-[320px] overflow-y-auto" style={{ background: '#0b141a' }}>
+    <div className="px-3 py-3 space-y-2 flex-1" style={{ background: '#0b141a' }}>
       <div className="flex justify-center mb-1">
         <span className="text-[10px] bg-[#182229] text-[#8696a0] px-3 py-0.5 rounded-md">TODAY</span>
       </div>
@@ -188,7 +188,7 @@ const ProblemSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-12"
+          className="flex flex-col md:flex-row items-start md:items-stretch justify-center gap-8 md:gap-12"
         >
           {/* Before */}
           <div className="flex flex-col items-center gap-3">
