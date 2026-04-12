@@ -96,13 +96,19 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap gap-4"
+          className="grid grid-cols-3 gap-4 max-w-2xl"
         >
-          {stats.map((s) => (
-            <div key={s.label} className="flex items-center gap-3 px-4 py-2.5 rounded-full border-thin border-border bg-card">
-              <span className="text-lg font-bold text-primary">{s.value}</span>
-              <span className="text-xs text-muted-foreground">{s.label}</span>
-            </div>
+          {stats.map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+              className="rounded-xl border border-border bg-card/60 backdrop-blur-sm px-5 py-5 text-center"
+            >
+              <span className="block text-3xl md:text-4xl font-extrabold text-primary mb-1">{s.value}</span>
+              <span className="text-xs md:text-sm text-muted-foreground">{s.label}</span>
+            </motion.div>
           ))}
         </motion.div>
       </div>
