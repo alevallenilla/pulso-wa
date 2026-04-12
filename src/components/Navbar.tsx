@@ -1,6 +1,6 @@
 import PulsoLogo from "./PulsoLogo";
 
-const navLinks = ["Products", "Why WhatsApp", "Developers", "About"];
+const navLinks = ["Products", "Why WhatsApp", "Developers"];
 
 const Navbar = () => {
   return (
