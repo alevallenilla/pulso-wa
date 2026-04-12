@@ -188,7 +188,7 @@ const ProblemSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-12"
+          className="flex flex-col md:flex-row items-start md:items-stretch justify-center gap-8 md:gap-12"
         >
           {/* Before */}
           <div className="flex flex-col items-center gap-3">
