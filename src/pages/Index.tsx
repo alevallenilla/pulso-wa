@@ -15,6 +15,7 @@ const Index = () => {
       <AnnouncementBar />
       <HeroSection />
       <ProblemSection />
+      <HowItWorksSection />
       <ProductSection />
       <DeveloperSection />
       <WaitlistSection />
