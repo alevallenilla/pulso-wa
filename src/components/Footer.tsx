@@ -26,9 +26,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-thin border-border pt-6">
-          <p className="text-xs text-muted-foreground">© 2026 Pulso Technologies, Inc. All rights reserved.</p>
-        </div>
+        <p className="text-xs text-muted-foreground pt-6">© 2026 Pulso Technologies, Inc. All rights reserved.</p>
       </div>
     </footer>
   );
