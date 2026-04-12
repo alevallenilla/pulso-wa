@@ -48,8 +48,8 @@ const DeveloperSection = () => {
             <ul className="space-y-3">
               {features.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-sm">
-                  <div className="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 text-accent" />
+                  <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3 h-3 text-primary" />
                   </div>
                   <span className="text-secondary-foreground">{f}</span>
                 </li>
@@ -80,7 +80,7 @@ const DeveloperSection = () => {
                     return (
                       <span key={i} className="block text-foreground">
                         {parts.map((p, j) =>
-                          p.startsWith("'") ? <span key={j} className="text-accent">{p}</span> : p
+                          p.startsWith("'") ? <span key={j} className="text-primary">{p}</span> : p
                         )}
                       </span>
                     );
@@ -97,7 +97,7 @@ const DeveloperSection = () => {
                         if (inKeyword) return <span key={j} className="text-primary">{p}</span>;
                         const strParts = p.split(/('.*?')/g);
                         return strParts.map((s, k) =>
-                          s.startsWith("'") ? <span key={`${j}-${k}`} className="text-accent">{s}</span> : s
+                          s.startsWith("'") ? <span key={`${j}-${k}`} className="text-primary">{s}</span> : s
                         );
                       })}
                     </span>
