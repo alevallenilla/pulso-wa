@@ -19,7 +19,7 @@ const BeforePhone = () => (
       <span className="text-sm font-semibold text-[#e9edef]">Merchant</span>
     </div>
     {/* Chat */}
-      <div className="px-3 py-3 space-y-2 h-[320px] overflow-y-auto" style={{ background: '#0b141a' }}>
+      <div className="px-3 py-3 space-y-2 min-h-[340px]" style={{ background: '#0b141a' }}>
       <div className="flex justify-center mb-1">
         <span className="text-[10px] bg-[#182229] text-[#8696a0] px-3 py-0.5 rounded-md">TODAY</span>
       </div>
@@ -96,7 +96,7 @@ const AfterPhone = () => (
       </div>
     </div>
     {/* Chat */}
-    <div className="px-3 py-3 space-y-2 h-[320px] overflow-y-auto" style={{ background: '#0b141a' }}>
+    <div className="px-3 py-3 space-y-2 min-h-[340px]" style={{ background: '#0b141a' }}>
       <div className="flex justify-center mb-1">
         <span className="text-[10px] bg-[#182229] text-[#8696a0] px-3 py-0.5 rounded-md">TODAY</span>
       </div>
