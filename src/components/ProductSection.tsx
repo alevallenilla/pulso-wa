@@ -50,25 +50,34 @@ const ProductSection = () => {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-5">
-          {products.map((p, i) => (
-            <motion.div
-              key={p.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-xl border-thin border-border bg-card p-6 hover:border-primary/30 transition-colors"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                  <p.icon className="w-5 h-5 text-primary" />
-                </div>
-                <span className={`text-xs font-medium ${p.tagColor}`}>{p.tag}</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{p.name}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
-            </motion.div>
-          ))}
+          {products.map((p, i) => {
+            const isVerify = p.name === "Pulso Verify";
+            const Wrapper = isVerify ? "a" : "div";
+            const wrapperProps = isVerify ? { href: "#pulso-verify" } : {};
+            return (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <Wrapper
+                  {...wrapperProps}
+                  className={`block rounded-xl border-thin border-border bg-card p-6 hover:border-primary/30 transition-colors ${isVerify ? "cursor-pointer" : ""}`}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+                      <p.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className={`text-xs font-medium ${p.tagColor}`}>{p.tag}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{p.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
+                </Wrapper>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

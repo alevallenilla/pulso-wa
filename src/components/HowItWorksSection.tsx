@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Webhook, Users, ShieldCheck, Zap, QrCode, ClipboardList } from "lucide-react";
+import { Shield, Webhook, Users, ShieldCheck, Zap, QrCode, ClipboardList } from "lucide-react";
 
 const StepChatMockup1 = () => (
   <div className="mt-4 rounded-xl bg-[#111b21] p-3 space-y-2">
@@ -134,7 +134,7 @@ const rails = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-[#060d1a]">
+    <section id="pulso-verify" className="py-20 md:py-32 bg-[#060d1a]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Eyebrow */}
         <motion.div
@@ -145,6 +145,7 @@ const HowItWorksSection = () => {
           className="flex items-center gap-2 mb-4"
         >
           <span className="w-2 h-2 rounded-full bg-[#25d366]" />
+          <Shield className="w-4 h-4 text-primary" />
           <span className="text-xs font-semibold uppercase tracking-widest text-[#25d366]">Pulso Verify</span>
         </motion.div>
 
