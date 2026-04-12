@@ -5,7 +5,7 @@ const products = [
   {
     icon: Shield,
     name: "Pulso Verify",
-    tag: "Available now",
+    tag: "Beta in progress",
     tagColor: "text-accent",
     description: "KYC and identity verification flows delivered entirely within WhatsApp. INE/CURP validation, liveness checks, and document capture — no app download required.",
   },
