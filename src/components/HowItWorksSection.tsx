@@ -136,17 +136,24 @@ const HowItWorksSection = () => {
   return (
     <section id="pulso-verify" className="py-20 md:py-32 bg-[#060d1a]">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Eyebrow */}
+        {/* Eyebrow card */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="flex items-center gap-2 mb-4"
+          className="inline-flex items-center gap-4 rounded-xl border border-border bg-card p-4 mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-[#25d366]" />
-          <Shield className="w-4 h-4 text-primary" />
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#25d366]">Pulso Verify</span>
+          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+            <Shield className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-semibold">Pulso Verify</h3>
+              <span className="text-xs font-medium text-primary">Beta in progress</span>
+            </div>
+            <p className="text-xs text-muted-foreground">KYC and identity verification flows delivered entirely within WhatsApp.</p>
+          </div>
         </motion.div>
 
         {/* Headline */}
