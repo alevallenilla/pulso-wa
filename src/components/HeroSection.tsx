@@ -42,7 +42,6 @@ const HeroSection = () => {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
       <PulseWaveform />
-      <FloatingCard />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
