@@ -38,31 +38,6 @@ const PulseWaveform = () => (
   </div>
 );
 
-const FloatingCard = () => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: 0.6 }}
-    className="absolute right-[10%] md:right-[18%] top-1/2 -translate-y-1/2 z-10"
-  >
-    <motion.div
-      animate={{ y: [0, -6, 0] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      className="rounded-lg px-4 py-3 border-l-2 border-[#25d366] shadow-lg"
-      style={{ background: '#1f2c34' }}
-    >
-      <div className="flex items-center gap-2 mb-1.5">
-        <div className="w-5 h-5 rounded-full bg-[#25d366] flex items-center justify-center flex-shrink-0">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111b21" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span className="text-sm font-semibold text-[#e9edef]">Order confirmed</span>
-      </div>
-      <p className="text-xs text-[#8696a0] mb-0.5">2× Al Pastor · $14.00 · ORD-4K82X</p>
-      <p className="text-[10px] text-[#8696a0]">Delivered via WhatsApp</p>
-    </motion.div>
-  </motion.div>
-);
-
 const HeroSection = () => {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
