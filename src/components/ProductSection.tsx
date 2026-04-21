@@ -1,34 +1,34 @@
 import { motion } from "framer-motion";
-import { Shield, CreditCard, Fingerprint, GitBranch } from "lucide-react";
+import { ShoppingBag, CreditCard, Fingerprint, GitBranch } from "lucide-react";
 
 const products = [
   {
-    icon: Shield,
-    name: "Pulso Verify",
-    tag: "Beta in progress",
+    icon: ShoppingBag,
+    name: "Pulso Order",
+    tag: "Available · Beta",
     tagColor: "text-primary",
-    description: "KYC and identity verification flows delivered entirely within WhatsApp. INE/CURP validation, liveness checks, and document capture — no app download required.",
+    description: "WhatsApp order management and Stripe checkout for US Latino merchants. Customers browse, order, and pay entirely inside WhatsApp — no app, no website, no POS hardware required.",
   },
   {
     icon: CreditCard,
     name: "Pulso Pay",
     tag: "Coming soon",
     tagColor: "text-muted-foreground",
-    description: "Programmable payments inside WhatsApp threads. SPEI, PIX, and card-on-file — triggered by a single API call. Real-time settlement webhooks.",
+    description: "Programmable payments inside WhatsApp threads. DiMo, Pix, and card-on-file across Latin America — triggered by a single API call. Real-time settlement webhooks.",
   },
   {
     icon: Fingerprint,
     name: "Pulso ID",
     tag: "Coming soon",
     tagColor: "text-muted-foreground",
-    description: "Portable identity primitive. Once verified, users carry their Pulso ID across merchants. Reduce onboarding friction from days to seconds.",
+    description: "Financial identity built from transaction history. Every order through Pulso builds a merchant profile — the foundation for credit, working capital, and insurance products.",
   },
   {
     icon: GitBranch,
     name: "Pulso Flow",
     tag: "Coming soon",
     tagColor: "text-muted-foreground",
-    description: "Visual workflow builder for financial conversations. Design branching logic for loan applications, insurance claims, and payment reminders.",
+    description: "Visual workflow builder for financial conversations. Design branching logic for loan applications, payment reminders, and custom commerce flows.",
   },
 ];
 
@@ -45,15 +45,15 @@ const ProductSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Product suite</h2>
           <p className="text-muted-foreground max-w-lg">
-            Four primitives. One platform. Everything you need to build financial products where your users already are.
+            One platform. Multiple use cases. Everything you need to build commerce and financial products where your customers already are.
           </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-5">
           {products.map((p, i) => {
-            const isVerify = p.name === "Pulso Verify";
-            const Wrapper = isVerify ? "a" : "div";
-            const wrapperProps = isVerify ? { href: "#pulso-verify" } : {};
+            const isOrder = p.name === "Pulso Order";
+            const Wrapper = isOrder ? "a" : "div";
+            const wrapperProps = isOrder ? { href: "#pulso-order" } : {};
             return (
               <motion.div
                 key={p.name}
@@ -64,7 +64,7 @@ const ProductSection = () => {
               >
                 <Wrapper
                   {...wrapperProps}
-                  className={`block rounded-xl border-thin border-border bg-card p-6 hover:border-primary/30 transition-colors ${isVerify ? "cursor-pointer" : ""}`}
+                  className={`block rounded-xl border-thin border-border bg-card p-6 hover:border-primary/30 transition-colors ${isOrder ? "cursor-pointer" : ""}`}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">

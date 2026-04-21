@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex gap-12">
             <div className="space-y-3">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Product</h4>
-              <a href="#products" className="block text-sm text-foreground hover:text-primary transition-colors">Pulso Verify</a>
+              <a href="#pulso-order" className="block text-sm text-foreground hover:text-primary transition-colors">Pulso Order</a>
               <a href="#products" className="block text-sm text-foreground hover:text-primary transition-colors">Pulso Pay</a>
               <a href="#products" className="block text-sm text-foreground hover:text-primary transition-colors">Pulso ID</a>
             </div>

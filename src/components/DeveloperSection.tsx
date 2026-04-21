@@ -6,18 +6,18 @@ const codeLines = [
   { text: "", type: "blank" },
   { text: "const pulso = new Pulso({", type: "code" },
   { text: "  apiKey: process.env.PULSO_API_KEY,", type: "code" },
-  { text: "  region: 'mx'", type: "code" },
+  { text: "  region: 'us'", type: "code" },
   { text: "});", type: "code" },
   { text: "", type: "blank" },
-  { text: "// Start a KYC verification via WhatsApp", type: "comment" },
-  { text: "const verification = await pulso.verify.create({", type: "code" },
-  { text: "  phone: '+5215512345678',", type: "string" },
-  { text: "  type: 'ine',", type: "string" },
-  { text: "  webhook: 'https://your-app.com/webhooks/kyc'", type: "string" },
+  { text: "// Launch an order session for a customer", type: "comment" },
+  { text: "const session = await pulso.order.create({", type: "code" },
+  { text: "  merchantId: 'merchant_abc123',", type: "string" },
+  { text: "  customerPhone: '+13125559876',", type: "string" },
+  { text: "  webhook: 'https://your-app.com/webhooks/orders'", type: "string" },
   { text: "});", type: "code" },
   { text: "", type: "blank" },
-  { text: "console.log(verification.status); // 'pending'", type: "code" },
-  { text: "// User completes the flow in WhatsApp ✓", type: "comment" },
+  { text: "console.log(session.status); // 'active'", type: "code" },
+  { text: "// Customer receives menu via WhatsApp ✓", type: "comment" },
 ];
 
 const features = [
@@ -68,7 +68,7 @@ const DeveloperSection = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
               <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
               <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
-              <span className="text-xs text-muted-foreground ml-2">quickstart.js</span>
+              <span className="text-xs text-muted-foreground ml-2">order-quickstart.js</span>
             </div>
             <pre className="p-5 text-[13px] leading-relaxed overflow-x-auto font-mono">
               <code>

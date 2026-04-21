@@ -55,9 +55,9 @@ const FloatingCard = () => (
         <div className="w-5 h-5 rounded-full bg-[#25d366] flex items-center justify-center flex-shrink-0">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111b21" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
-        <span className="text-sm font-semibold text-[#e9edef]">Payment confirmed</span>
+        <span className="text-sm font-semibold text-[#e9edef]">Order confirmed</span>
       </div>
-      <p className="text-xs text-[#8696a0] mb-0.5">Bs. 350 · TXN-8821</p>
+      <p className="text-xs text-[#8696a0] mb-0.5">2× Al Pastor · $14.00 · ORD-4K82X</p>
       <p className="text-[10px] text-[#8696a0]">Delivered via WhatsApp</p>
     </motion.div>
   </motion.div>
@@ -80,7 +80,7 @@ const HeroSection = () => {
             <span className="text-muted-foreground">The platform LatAm already lives on.</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl mb-8">
-            Pulso gives developers the APIs to embed payments, identity verification, and financial workflows directly inside WhatsApp conversations.
+            Pulso is the infrastructure layer for WhatsApp commerce and finance in Latin America. Deploy ordering, payments, identity, and financial workflows natively inside the channel 530M people already use. First use case live: Pulso Order.
           </p>
           <div className="flex flex-wrap gap-3 mb-12">
             <a href="#waitlist" className="px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity">

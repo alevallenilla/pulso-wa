@@ -1,6 +1,6 @@
 const pills = [
-  "WhatsApp Business API",
-  "Official Meta Technology Partner",
+  "Built on the WhatsApp Business API",
+  "Powered by Stripe",
   "Available across Latin America",
   "End-to-end encrypted",
 ];
